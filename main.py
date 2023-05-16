@@ -20,9 +20,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = secrets.token_urlsafe(16)
 
-# Cross-Site Request Forgery Protection
-csrf = CSRFProtect(app)
-
 # Bootstrap
 bootstrap = Bootstrap(app)
 
