@@ -37,6 +37,7 @@ def home():
         print("message delivered")
         data = contact_form.data
         send_email(data['name'], data['email'], data['subject'], data['message'])
+        return render_template('index.html', form=contact_form)
     return render_template('index.html', form=contact_form)
 
 
