@@ -347,7 +347,7 @@
 
             <div class="container">
 
-            <form id="contact-form" class="contact-form" method="post" onsubmit="clearFormAndShowMessage()">
+            <form id="contact-form", class="contact-form"  method="post" onsubmit="clearFormAndShowMessage()">
               {{ form.csrf_token }}
 
               <div class="row gy-4">
@@ -374,11 +374,17 @@
             </form>
               <script>
                 function clearFormAndShowMessage() {
+
+                 // Display success message
+                  alert("Message sent successfully!");
+
+                  // Submit the form
+                  document.getElementById("contact-form").submit();
+
                   // Clear form fields
                   document.getElementById("contact-form").reset();
 
-                  // Display success message
-                  alert("Message sent successfully!");
+
                 }
               </script>
 

@@ -32,10 +32,11 @@ from flask import jsonify
 @app.route("/", methods=['GET', 'POST'])
 def home():
     contact_form = ContactForm()
+    print(contact_form.data)
     if contact_form.validate_on_submit():
+        print("message delivered")
         data = contact_form.data
         send_email(data['name'], data['email'], data['subject'], data['message'])
-        return jsonify({'status': 'success', 'message': 'Form submitted successfully!'})
     return render_template('index.html', form=contact_form)
 
 
